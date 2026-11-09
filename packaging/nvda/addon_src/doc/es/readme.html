@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>Speech Logger 25.1.0</title>
+</head>
+<body>
+<h1>Speech Logger</h1>
+<h3>Complemento de registro del habla para NVDA</h3>
+<ul>
+<li>Autor: Luke Davis, con colaboraciones de James Scholes</li>
+<li>Descargar <a href="https://www.nvaccess.org/addonStore/legacy?file=speechLogger">versión estable</a></li>
+<li>Compatibilidad con NVDA: de 2019.3.1 en adelante</li>
+</ul>
+<p>Un complemento para <a href="https://nvaccess.org/">NVDA</a> para registrar el habla en uno o varios
+archivos. Puede grabar la voz generada en el equipo local a un archivo de
+texto. También puede grabar la voz recibida desde un equipo remoto mediante
+el complemento <a href="https://nvdaremote.com/">NVDA Remote</a> al mismo archivo o a uno distinto.</p>
+<h3>Configuración</h3>
+<p>Para configurar este complemento, abre el menú NVDA, ve a Preferencias,
+luego a Opciones, y finalmente Speech Logger (NVDA+n, p, o, y s hasta llegar
+allí en un teclado español). Hay también un gesto sin asignar en la
+categoría "Configuración" del diálogo Gestos de entrada que puedes asignar y
+usar para abrir rápidamente el diálogo de opciones del complemento. Nota: el
+complemento sólo se puede configurar con el perfil normal de NVDA. Este
+complemento no es sensible a perfiles. Si crees que hay un caso de uso en el
+que pueda operar de manera diferente en perfiles distintos, contacta con el
+autor o abre una incidencia en el <a href="https://github.com/opensourcesys/speechLogger/issues/new">repositorio de GitHub</a>.</p>
+<h3>Se encuentran disponibles las siguientes opciones:</h3>
+<ul>
+<li>La carpeta de registro. Puedes introducirla a mano o examinar para buscar
+  el directorio de destino deseado, que debe existir ya. Las variables del
+  sistema, como %temp% o %userprofile%, se pueden usar en este campo.</li>
+<li>Nombre de archivo de registro local. El archivo creado se situará en la
+  carpeta de arriba. Contendrá el habla registrada mientras se usa el modo
+  local. Puede ser el mismo archivo que el remoto. Déjalo en blanco para
+  deshabilitar completamente este tipo de registro.</li>
+<li>Nombre de archivo de registro remoto. El archivo creado se situará en la
+  carpeta de arriba. Contendrá el habla registrada mientras se usa el modo
+  remoto. Puede ser el mismo archivo que el local. Déjalo en blanco para
+  deshabilitar completamente este tipo de registro.</li>
+<li>Separador. Este cuadro combinado permite elegir uno de los separadores de
+  secuencias disponibles. Más adelante se proporciona más información.</li>
+<li>Separador personalizado. Este campo permite introducir un separador de
+  secuencias personalizado (lee más abajo), que se usa si se elige
+  "personalizado" en el cuadro combinado.</li>
+<li>Modo de sello de tiempo. Este cuadro combinado permite elegir entre no
+  usar marcas de tiempo, y una marca de tiempo al inicio y al final de cada
+  sesión de registro.</li>
+<li>Modo registrar voz al verbalizar todo (leer hasta el final). El
+  complemento registra la voz generada al pulsar NVDA+flecha abajo (NVDA+a
+  en la distribución portátil). Si no quieres registrar textos tan largos,
+  desmarca esta casilla.</li>
+<li>Iniciar registro al arrancar. Se puede configurar esta opción en "siempre"
+  si quieres que se registre la voz automáticamente cuando NVDA se
+  inicia. Esto sólo se aplica a la voz local, y el valor por defecto es
+  "nunca".</li>
+</ul>
+<h4>SEPARADOR DE SECUENCIAS</h4>
+<p>Cuando NVDA verbaliza algo como "<code>Papelera de reciclaje  1 de 55</code>" al leer
+el escritorio, esto se considera como dos secuencias separadas. La primera
+es el nombre del elemento ("<code>Papelera de reciclaje</code>" en este ejemplo), y la
+segunda es la información de posición del objeto ("<code>1 de 55</code>" en este
+ejemplo).</p>
+<p>Dependiendo de lo que leas y cómo esté configurado NVDA, puede haber varias
+secuencias separadas que se suceden en un único mensaje de voz.</p>
+<p>En el registro normal de NVDA con el nivel de depuración habilitado, cada
+secuencia individual se separa con dos espacios, como se ha escrito en el
+ejemplo anterior.</p>
+<p>Speech Logger te permite separar las secuencias igual que lo hace NVDA (con
+dos espacios), o con una de las pocas alternativas razonables (un salto de
+línea, una coma y un espacio, un tabulador, dos guiones bajos), o con la
+secuencia de caracteres que prefieras.</p>
+<p>Si, por ejemplo, quisieras que tu separador de secuencias fuese dos signos
+de dólar (<code>$$</code>), configurarías el cuadro combinado en "personalizado", e
+introducirías "<code>$$</code>" (sin las comillas) en el campo de separador
+personalizado. Si quisieras una línea en blanco seguida de un tabulador,
+podrías introducir "<code>\n\t</code>".</p>
+<h3>Controles:</h3>
+<p>Este complemento tiene dos atajos de teclado configurados por defecto, y uno
+que viene sin asignar.</p>
+<p>Los gestos por defecto, que puedes cambiar desde la categoría <code>Speech
+Logger</code> de los gestos de entrada de NVDA, son:</p>
+<ul>
+<li>NVDA+alt+l: inicia o detiene el registro del habla local.</li>
+<li>NVDA+shift+alt+l: inicia o detiene el registro del habla remota.</li>
+</ul>
+<p>Se enumeran como "Conmuta el registro del habla local" y "Conmuta el
+registro del habla remota", respectivamente.</p>
+<p>Además, tiene un gesto sin asignar para abrir su panel de configuración, que
+puedes asignar desde la categoría <code>Speech logger</code> en los gestos de entrada
+de NVDA.</p>
+<h3>Nota sobre el registro del habla remota</h3>
+<p>Este complemento está pensado para funcionar con el complemento NVDA Remote
+para registrar la voz remota.</p>
+<p>Es importante saber que no es posible iniciar el registro de sesiones
+remotas hasta que realmente inicies una. No hay forma, por ejemplo, de
+iniciar el registro, mantenerlo en espera hasta que comience la sesión y
+empezar a registrar en ese momento.</p>
+<p>Sin embargo, una vez comience, el registro continuará durante todas las
+sesiones remotas.</p>
+<h3>Comentarios y solicitud de características</h3>
+<p>Si deseas sugerir una función o informar de un fallo, contacta por correo o
+abre una <a href="https://github.com/opensourcesys/speechLogger/issues/new">incidencia</a>.</p>
+<p>Si encuentras este complemento útil, sería muy útil que <a href="https://github.com/nvaccess/addon-datastore/discussions/2636">dejaras una
+reseña</a>.</p>
+<p>Como siempre, agradezco oír que mis complementos son útiles, y averiguar
+para qué los usa la gente.</p>
+<p>[[!tag dev stable]]</p>
+</body>
+</html>

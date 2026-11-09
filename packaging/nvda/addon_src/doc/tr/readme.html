@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>Speech Logger 25.1.0</title>
+</head>
+<body>
+<h1>Konuşma Kaydedici</h1>
+<h3>NVDA Konuşma Kaydedici eklentisi</h3>
+<ul>
+<li>Yazar: Luke Davis, James Scholes'un katkılarıyla</li>
+<li><a href="https://www.nvaccess.org/addonStore/legacy?file=speechLogger">Kararlı sürümü indirin</a></li>
+<li>NVDA uyumluluğu: 2019.3.1 ve sonrası</li>
+</ul>
+<p>Konuşmayı bir dosyaya veya dosyalara kaydetmek için bir <a href="https://nvaccess.org/">NVDA</a>
+eklentisi. Yerel makinede oluşturulan konuşmayı bir metin dosyasına
+kaydedebilir. Ayrıca, <a href="https://nvdaremote.com/">NVDA Remote</a> eklentisi aracılığıyla uzaktaki bir
+makineden alınan konuşmayı aynı veya farklı bir dosyaya kaydedebilir.</p>
+<h3>Yapılandırma</h3>
+<p>Bu eklentiyi yapılandırmak için NVDA menüsünü açın, Tercihler'e, ardından
+Ayarlar'a ve ardından Konuşma Kaydedici'ye gidin (NVDA+N, T, L, ardından
+varsayılan ABD İngilizcesi klavyede oraya ulaşana kadar K tuşuna
+basın). Ayrıca Girdi Hareketleri "Yapılandırma" kategorisinde eklentinin
+ayarlarını doğrudan hızlı bir şekilde açmak için atayabileceğiniz ve
+kullanabileceğiniz atanmamış bir hareket vardır. Not: Eklenti yalnızca
+NVDA'nın Normal Yapılandırma profilindeyken yapılandırılabilir. Eklenti
+profil uyumlu değildir. Farklı profillerde farklı şekilde çalışmasını
+gerektiren bir kullanım durumu aklınıza geliyorsa, lütfen yazarla iletişime
+geçin veya <a href="https://github.com/opensourcesys/speechLogger/issues/new">GitHub deposunda</a> bir sorun bildirin.</p>
+<h3>Aşağıdaki ayarlar mevcuttur:</h3>
+<ul>
+<li>Günlük dizini. Halihazırda var olması gereken, istediğiniz hedef dizini
+  girebilir veya bu dizine göz atabilirsiniz. Bu alanda %temp%,
+  %userprofile% gibi sistem değişkenleri kullanılabilir.</li>
+<li>Yerel günlük dosya adı. Oluşturulan dosya yukarıdaki dizine
+  yerleştirilecektir. Bu, yerel günlük modu devredeyken günlüğe kaydedilen
+  konuşmayı içerecektir. Bu, uzak günlük dosyasıyla aynı olabilir. Bu tür
+  günlüğü tamamen devre dışı bırakmak için boş bırakın.</li>
+<li>Uzak günlük dosya adı. Oluşturulan dosya yukarıdaki dizine
+  yerleştirilecektir. Bu, uzak günlük modu devredeyken günlüğe kaydedilen
+  konuşmayı içerecektir. Yerel günlük dosyasıyla aynı olabilir. Bu tür
+  günlüğü tamamen devre dışı bırakmak için boş bırakın.</li>
+<li>Ayırıcı. Bu birleşik giriş kutusu, mevcut ifade ayırıcılardan birini
+  seçmenize izin verir. Daha fazla bilgi için aşağıya bakın.</li>
+<li>Özel ayırıcı. Bu alan, açılan kutuda "özel" seçilirse kullanılan özel bir
+  deyim ayırıcı (aşağıya bakın) girmenizi sağlar.</li>
+<li>Zaman damgası modu. Bu açılan kutu, zaman damgası olmaması ile her günlük
+  oturumunun başında ve sonunda bir zaman damgası arasında seçim yapmanızı
+  sağlar.</li>
+<li>Tümünü söyle (sonuna kadar oku) modunda konuşmayı günlüğe kaydedin. Bu
+  eklenti, NVDA+Aşağı Ok (dizüstü bilgisayar düzeninde NVDA+a) tuşlarına
+  bastığınızda oluşturulan konuşmayı günlüğe kaydeder. Bu tür uzun
+  anlatıların günlüğe kaydedilmesini istemiyorsanız, bu kutunun işaretini
+  kaldırın.</li>
+<li>Başlangıçta günlüğe kaydetmeye başla. NVDA başladığında konuşmanın
+  otomatik olarak günlüğe kaydedilmesini istiyorsanız, bu seçeneği "Her
+  Zaman" olarak ayarlayabilirsiniz. Bu yalnızca yerel konuşma için
+  geçerlidir ve varsayılan değer "asla" dır.</li>
+</ul>
+<h4>İfade ayırıcı</h4>
+<p>NVDA masaüstünüzü okurken "<code>geri dönüşüm kutusu 1 tire 55 gibi bir şey
+söylediğinde, bu iki ayrı ifade olarak kabul edilir.  Birincisi öğe adı
+("</code>Geri dönüşüm kutusu<code>", bu örnekte), ikincisi ise nesne konum bilgisidir
+("</code>1 tire 55`, bu örnekte).</p>
+<p>Ne okuduğunuza ve NVDA'yı nasıl yapılandırdığınıza bağlı olarak, tek bir
+konuşma dizisi sırasında birden çok farklı ifade olabilir.</p>
+<p>Hata ayıklama seviyesindeki normal NVDA günlüğünde, yukarıdaki örnekte
+yazıldığı gibi her bir ifade iki boşlukla ayrılır.</p>
+<p>Konuşma Kaydedici, ifadeleri NVDA'nın yaptığı gibi (iki boşlukla) veya
+birkaç makul alternatiften biriyle (yeni satır, virgül ve boşluk, sekme, iki
+alt çizgi) veya özel bir sıra ile ayırmanıza olanak tanır. kendi tasarımın.</p>
+<p>Örneğin, ifade ayırıcınızın iki dolar işareti (<code>$$</code>) olmasını istiyorsanız,
+birleşik giriş kutusunu "özel" olarak ayarlar ve özel ayırıcıya "<code>$$</code>"
+(tırnak işaretleri olmadan) girersiniz. alan. Yeni bir satır ve ardından bir
+sekme olmasını istiyorsanız, "<code>\\n\\t</code>" girebilirsiniz.</p>
+<h3>Kontroller:</h3>
+<p>Bu eklentinin varsayılan olarak ayarlanmış iki klavye kısayolu ve atanmamış
+bir klavye kısayolu vardır.</p>
+<p>NVDA Girdi Hareketleri "`Konuşma Kaydedici'' kategorisinde
+değiştirebileceğiniz varsayılan hareketler şunlardır:</p>
+<ul>
+<li>NVDA+Alt+L: yerel konuşma kaydını başlat/durdur.</li>
+<li>NVDA+Shift+Alt+L: uzaktan konuşma kaydını başlat/durdur.</li>
+</ul>
+<p>Bunlar sırasıyla "Yerel konuşmanın günlüğe kaydedilmesini çıp kapatır" ve
+"Uzaktan konuşmanın günlüğe kaydedilmesini Açıp kapatır" olarak listelenir.</p>
+<p>Ek olarak, NVDA'nın Girdi Hareketleri'ndeki 'Konuşma Kaydedici'
+kategorisinden atayabileceğiniz, yapılandırma panelini açmak için atanmamış
+bir hareket vardır.</p>
+<h3>Uzaktan konuşma kaydı hakkında bir not</h3>
+<p>Bu eklenti, uzak konuşmanın günlüğe kaydedilmesi için NVDA Uzaktan Destek
+eklentisiyle çalışmak üzere tasarlanmıştır.</p>
+<p>Gerçekte bir tane başlatana kadar uzak oturumlar için günlüğe kaydetmeye
+başlamanın mümkün olmadığını bilmek önemlidir. Örneğin, günlüğe kaydetmeye
+başlamanın ve uzak bir oturum başlayana kadar bekleme modunda beklemesini
+sağlamanın ve o sırada günlüğe kaydetmeye başlamasının bir yolu yoktur.</p>
+<p>Ancak, bir kez başlatıldıktan sonra günlük kaydı uzak oturumlarda devam
+edecektir.</p>
+<h3>Geri bildirim ve özellik istekleri</h3>
+<p>Bir özellik önermek veya bir hata bildirmek istiyorsanız, lütfen e-posta ile
+iletişime geçin veya bir <a href="https://github.com/opensourcesys/speechLogger/issues/new">sorun</a> gönderin.</p>
+<p>Bu eklentiyi faydalı bulursanız, <a href="https://github.com/nvaccess/addon-datastore/discussions/2636">inceleme bırakırsanız</a>  gerçekten
+yardımcı olacaktır.</p>
+<p>Her zaman olduğu gibi, eklentilerimin faydalı olduğunu duymaktan ve
+insanların bunları ne için kullandığını öğrenmekten memnuniyet duyuyorum.</p>
+<p>[[!tag dev stable]]</p>
+</body>
+</html>
