@@ -1,0 +1,117 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "final_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "faithfulness_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "coverage_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "precision_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "usefulness_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "noise_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "hallucination_rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "total_claim_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "supported_claim_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unsupported_claim_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "contradicted_claim_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "over_specific_claim_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "key_facts_total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "key_facts_matched": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unsupported_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_facts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extra_facts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rationale": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "final_score",
+    "faithfulness_score",
+    "coverage_score",
+    "precision_score",
+    "usefulness_score",
+    "noise_score",
+    "hallucination_rate",
+    "total_claim_count",
+    "supported_claim_count",
+    "unsupported_claim_count",
+    "contradicted_claim_count",
+    "over_specific_claim_count",
+    "key_facts_total",
+    "key_facts_matched",
+    "unsupported_claims",
+    "contradictions",
+    "missing_facts",
+    "extra_facts",
+    "rationale"
+  ]
+}

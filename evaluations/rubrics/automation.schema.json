@@ -1,0 +1,183 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "final_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "automation_opportunity_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "ai_delegation_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "shortcut_opportunity_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "repetition_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "context_switch_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "deep_flow_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "distraction_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "passive_consumption_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "social_scroll_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "adhd_friction_proxy_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "mood_positive_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "mood_negative_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "mood_confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "automatable_task_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ai_delegable_task_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "shortcut_task_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "repetitive_task_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "repetition_instances": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "context_switch_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "deep_flow_session_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "deep_flow_minutes": {
+      "type": "number",
+      "minimum": 0
+    },
+    "estimated_effort_savings_minutes": {
+      "type": "number",
+      "minimum": 0
+    },
+    "top_automation_opportunities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "repeated_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "context_switch_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "flow_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "distraction_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mood_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rationale": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "final_score",
+    "automation_opportunity_score",
+    "ai_delegation_score",
+    "shortcut_opportunity_score",
+    "repetition_score",
+    "context_switch_score",
+    "deep_flow_score",
+    "distraction_score",
+    "passive_consumption_score",
+    "social_scroll_score",
+    "adhd_friction_proxy_score",
+    "mood_positive_score",
+    "mood_negative_score",
+    "mood_confidence_score",
+    "automatable_task_count",
+    "ai_delegable_task_count",
+    "shortcut_task_count",
+    "repetitive_task_count",
+    "repetition_instances",
+    "context_switch_count",
+    "deep_flow_session_count",
+    "deep_flow_minutes",
+    "estimated_effort_savings_minutes",
+    "top_automation_opportunities",
+    "repeated_patterns",
+    "context_switch_notes",
+    "flow_notes",
+    "distraction_notes",
+    "mood_evidence",
+    "rationale"
+  ]
+}

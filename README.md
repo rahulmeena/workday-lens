@@ -6,13 +6,31 @@
 
 Workday Lens captures desktop context, groups it into activity windows, and uses language models to reconstruct what you worked on, why, and how the day unfolded. It combines native capture, local storage, hierarchical summaries, and an interactive timeline.
 
-[Windows beta download](https://navya.ai/download) · [Try the demo](#try-it-with-synthetic-data) · [Architecture](docs/architecture.md) · [Privacy](docs/privacy.md) · [Contributing](CONTRIBUTING.md)
+[Windows beta download](https://navya.ai/download) · [Try the demo](#try-it-with-synthetic-data) · [Evaluation](docs/evaluation.md) · [Architecture](docs/architecture.md) · [Contributing](CONTRIBUTING.md)
+
+### Daily dashboard
 
 ![Workday Lens dashboard with synthetic sample data](docs/images/dashboard.jpg)
 
-*This dashboard uses fictional activity. No personal work history is included in the repository.*
+### Detailed timeline
+
+![Workday Lens hierarchical timeline with synthetic sample data](docs/images/timeline.jpg)
+
+*Both product screenshots use fictional activity. The evaluation section below contains real aggregate benchmark results; private work history is not published.*
 
 [![CI](https://github.com/rahulmeena/workday-lens/actions/workflows/ci.yml/badge.svg)](https://github.com/rahulmeena/workday-lens/actions/workflows/ci.yml)
+
+## Evaluation
+
+Development included **46 model/runtime/modality/prompt configurations across 25 local/open-weight and 4 proprietary model identities**, spanning quantized local models, text/image inputs and hierarchical summaries. The saved archive contains **27,666 generation records** and **55,878 completed LLM judgments**: 33,981 quality judgments plus 21,897 exploratory workflow-opportunity assessments.
+
+The evaluation workflow combines GPT-5.4/GPT-5.5/GPT-5.4-mini judges, reference agreement, source-grounded faithfulness/coverage/precision, schema validity, latency and token-use tracking. Four retained 50-card prompt sweeps show how prompt changes were compared, including regressions.
+
+![Real source-grounded quality results](docs/images/evaluation-source-grounded.svg)
+
+**[Read the evaluation report →](docs/evaluation.md)** · [All model results](docs/evaluation-models.md) · [Judge scores](docs/evaluation-judges.md) · [Prompt experiments](docs/evaluation-prompts.md) · [Data, rubrics and aggregation code](evaluations/README.md)
+
+*These are retrospective development results with uneven coverage, not a controlled leaderboard. Counts include failed generation configurations; 24 of the 25 local model identities produced successful outputs. Repeated judgments cover 589 distinct source buckets, not 55,878 independent examples. The report distinguishes measured quality, heuristics and unavailable metrics.*
 
 ## What it does
 

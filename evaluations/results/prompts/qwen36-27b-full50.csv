@@ -1,0 +1,6 @@
+experiment,variant,n,same_source_set,combined,headline_sim,summary_sim,field_score,evidence_overlap,noncollapse,confidence_sanity,elapsed_ms,parse_ok_rate,compacted_count,predicted_per_second,predicted_per_second_n,prompt_per_second,prompt_per_second_n
+qwen36-27b-full50,default_existing,50,True,0.372438,0.463973,0.079256,0.596843,0.234702,0.9676,1.0,0.0,1.0,0,,0,,0
+qwen36-27b-full50,qwen36_27b_generic_v1,50,True,0.379483,0.454201,0.101472,0.572429,0.265139,1.0,1.0,52025.9,1.0,0,13.780719,50,120.243438,50
+qwen36-27b-full50,qwen36_27b_generic_v2,50,True,0.378439,0.461555,0.098773,0.565587,0.262458,1.0,1.0,57574.14,1.0,0,13.057155,50,112.460042,50
+qwen36-27b-full50,qwen36_default_chatml,50,True,0.365302,0.447498,0.07768,0.57412,0.225102,1.0,1.0,52668.12,1.0,0,14.278464,50,126.429592,50
+qwen36-27b-full50,qwen_small_generic_v2,50,True,0.364312,0.437188,0.098233,0.515317,0.283148,0.9928,1.0,58333.78,1.0,0,12.864891,50,108.369463,50

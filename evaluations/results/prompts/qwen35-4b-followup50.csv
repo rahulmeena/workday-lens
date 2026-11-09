@@ -1,0 +1,6 @@
+experiment,variant,n,same_source_set,combined,headline_sim,summary_sim,field_score,evidence_overlap,noncollapse,confidence_sanity,elapsed_ms,parse_ok_rate,compacted_count,predicted_per_second,predicted_per_second_n,prompt_per_second,prompt_per_second_n
+qwen35-4b-followup50,qwen35_4b_generic_v4,50,True,0.330085,0.421069,0.069027,0.481538,0.152001,0.9964,1.0,9136.76,1.0,0,66.307295,50,722.695322,50
+qwen35-4b-followup50,qwen35_4b_generic_v5,50,True,0.329096,0.430493,0.065194,0.482543,0.133936,0.9964,1.0,9208.9,1.0,0,63.525605,50,703.835771,50
+qwen35-4b-followup50,qwen35_4b_generic_v6,50,True,0.326878,0.419208,0.076932,0.457975,0.138229,1.0,1.0,9107.42,1.0,0,65.629836,50,720.598545,50
+qwen35-4b-followup50,qwen35_4b_generic_v8,50,True,0.337431,0.461723,0.071531,0.475044,0.139494,0.9964,1.0,8816.2,1.0,0,66.093142,50,724.117688,50
+qwen35-4b-followup50,qwen36_27b_generic_v2,50,True,0.323384,0.415822,0.067219,0.468154,0.127288,1.0,1.0,8858.34,1.0,0,66.300594,50,723.030059,50

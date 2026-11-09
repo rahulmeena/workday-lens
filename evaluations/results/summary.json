@@ -1,0 +1,49 @@
+{
+  "export_schema": "workday-lens-aggregate-v1",
+  "published_on": "2026-11-10",
+  "generation_date_range_utc": [
+    "2026-05-10",
+    "2026-07-01"
+  ],
+  "generation_records": 27666,
+  "generation_statuses": {
+    "failed": 1011,
+    "queued": 1,
+    "succeeded": 26654
+  },
+  "generation_sessions": 69,
+  "raw_dashboard_configurations": 47,
+  "configurations": 46,
+  "local_model_identities": 25,
+  "api_model_identities": 4,
+  "local_identities_with_success": 24,
+  "source_items": 3051,
+  "levels": [
+    "15m",
+    "1d",
+    "1h",
+    "1m",
+    "1w",
+    "4h",
+    "5m"
+  ],
+  "judge_runs": 5,
+  "judge_statuses": {
+    "failed": 1171,
+    "succeeded": 55878
+  },
+  "unique_judged_generations": 20867,
+  "unique_judged_source_items": 589,
+  "configurations_with_successful_judgments": 38,
+  "stored_metric_records": 657942,
+  "stored_metric_names": 32,
+  "csv_sha256": {
+    "configurations.csv": "dbdd1834552ee72cefd335228952ba5301c7fb0dd1c56b31314c6f2d6ae8befa",
+    "generation-levels.csv": "e976c8446243bbec73c8d7383bde3954f21f0370a370bf5545c68f3c442c90d1",
+    "stored-metrics.csv": "7a07d2a59ae7a1dd279e90b8b338760d1ea397f5efd1d17bed16079afdedaf18",
+    "judge-scores.csv": "a65901babeb740713090d7b66a39b07d0d58e54051c3bf45a1cd9e2d945d1c0d",
+    "judge-levels.csv": "204c000053d4be233aa51dde7954bc9e5647091eaea6de0f109c31f2975e735d",
+    "judge-runs.csv": "0c62e856e60c9dbd94b5e2ededa116934985705d841df538e1bc68d8e9742b99",
+    "runtime-metadata.csv": "eed29fa463e0a1a26e80653d9121928b668a4929e317e5a6df526303d53fd3c0"
+  }
+}

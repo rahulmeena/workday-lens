@@ -1,6 +1,6 @@
 # Versions and source provenance
 
-This repository begins with a reviewed public source snapshot on November 10, 2026. Earlier development occurred privately. Private databases, capture buffers, real activity screenshots, credentials, model caches, migration bundles, and experiment results are excluded.
+This repository begins with a reviewed public source snapshot on November 10, 2026. Earlier development occurred privately. Private databases, capture buffers, real activity screenshots, credentials, model caches, migration bundles, and raw experiment outputs are excluded. Reviewed numeric aggregates from the historical benchmark are available in the [evaluation report](evaluation.md).
 
 | Branch | Source lineage | Intended use |
 | --- | --- | --- |

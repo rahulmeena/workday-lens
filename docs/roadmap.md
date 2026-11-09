@@ -18,9 +18,11 @@ These are contribution directions, not release-date commitments.
 
 ## Context quality
 
-- A synthetic evaluation set for activity/goal extraction and summary fidelity.
-- Reproducible latency, memory, token-use, and evidence-loss measurements across local/cloud models.
+- Build on the [published evaluation archive](evaluation.md): 46 configurations, reference/source-grounded judgments, runtime metrics and prompt-regression sweeps.
+- Publish a synthetic/consented evaluation set with a held-out split for activity/goal extraction and summary fidelity.
+- Calibrate and blind judge rubrics against human labels; extend source-grounded coverage to newer local models.
+- Standardize model revisions, prompts, hardware and input cohorts for reproducible latency, memory, token-use and evidence-loss comparisons.
 - Better project continuity across apps and summary levels.
 - Pagination and incremental updates for long histories.
 
-No quality or performance scores are published yet. Measurements should be reproducible before becoming product claims.
+Historical aggregate scores and their limitations are published. A shareable dataset and controlled comparisons are the next step before making general quality or performance claims.

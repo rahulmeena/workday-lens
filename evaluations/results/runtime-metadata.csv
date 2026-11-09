@@ -1,0 +1,230 @@
+config_id,field,recorded_values
+C01,ctx_size,16384
+C01,predict_tokens,1024
+C01,runtime,llama.cpp
+C02,ctx_size,16384
+C02,predict_tokens,1024
+C02,runtime,llama.cpp
+C03,ctx_size,16384
+C03,predict_tokens,1024
+C03,runtime,llama.cpp
+C04,ctx_size,16384
+C04,predict_tokens,1024
+C04,runtime,llama.cpp
+C05,ctx_size,16384
+C05,predict_tokens,1024
+C05,runtime,llama.cpp
+C06,ctx_size,16384
+C06,predict_tokens,1024
+C06,runtime,llama.cpp.vlm
+C07,ctx_size,16384
+C07,predict_tokens,1024
+C07,runtime,llama.cpp.vlm
+C08,chip,Apple M5 Pro
+C08,ctx_size,32768
+C08,llama_cpp_version,version: 9263 (6a257d446)
+C08,platform,darwin
+C08,predict_tokens,1024
+C08,prompt_style,qwen35_4b_generic_v8
+C08,quant,Q4_K_M
+C08,runtime,llama_server_metal
+C08,unified_memory_gb,48
+C09,ctx_size,16384
+C09,predict_tokens,1024
+C09,runtime,llama.cpp
+C10,ctx_size,16384
+C10,predict_tokens,1024
+C10,runtime,llama.cpp.vlm
+C11,ctx_size,16384
+C11,predict_tokens,1024
+C11,runtime,llama.cpp.vlm
+C12,chip,Apple M5 Pro
+C12,ctx_size,16384
+C12,llama_cpp_version,version: 9263 (6a257d446)
+C12,platform,darwin
+C12,predict_tokens,1024
+C12,quant,Q4_K_M
+C12,runtime,llama_server_metal
+C12,unified_memory_gb,48
+C13,chip,Apple M5 Pro
+C13,ctx_size,16384
+C13,llama_cpp_version,version: 9263 (6a257d446)
+C13,platform,darwin
+C13,predict_tokens,1024
+C13,quant,Q4_K_M
+C13,runtime,llama_server_metal
+C13,unified_memory_gb,48
+C14,chip,Apple M5 Pro
+C14,ctx_size,16384
+C14,llama_cpp_version,version: 9263 (6a257d446)
+C14,platform,darwin
+C14,predict_tokens,1024 | 2048
+C14,quant,F16
+C14,runtime,llama_server_metal
+C14,unified_memory_gb,48
+C15,chip,Apple M5 Pro
+C15,ctx_size,4096 | 8192
+C15,llama_cpp_version,version: 1 (6a257d446)
+C15,platform,darwin
+C15,predict_tokens,1024 | 512
+C15,quant,Q5_K_M
+C15,runtime,llama_server_metal
+C15,unified_memory_gb,48
+C16,chip,Apple M5 Pro
+C16,ctx_size,16384 | 32768
+C16,llama_cpp_version,version: 9263 (6a257d446)
+C16,platform,darwin
+C16,predict_tokens,1024
+C16,prompt_style,qwen_small_generic_v2
+C16,quant,Q4_K_M
+C16,runtime,llama.cpp | llama_server_metal
+C16,unified_memory_gb,48
+C17,chip,Apple M5 Pro
+C17,ctx_size,16384 | 32768
+C17,llama_cpp_version,version: 9263 (6a257d446)
+C17,platform,darwin
+C17,predict_tokens,1024
+C17,prompt_style,qwen_small_generic_v2
+C17,quant,Q4_K_M
+C17,runtime,llama.cpp | llama.cpp.vlm | llama_server_metal
+C17,unified_memory_gb,48
+C18,ctx_size,16384
+C18,predict_tokens,1024
+C18,runtime,llama.cpp.vlm
+C19,chip,Apple M5 Pro
+C19,ctx_size,32768
+C19,llama_cpp_version,version: 9263 (6a257d446)
+C19,platform,darwin
+C19,predict_tokens,1024 | 2048
+C19,prompt_style,qwen_small_generic_v1
+C19,quant,Q4_K_M
+C19,runtime,llama_server_metal
+C19,unified_memory_gb,48
+C20,ctx_size,16384
+C20,predict_tokens,1024
+C20,runtime,llama.cpp | llama.cpp.vlm
+C21,ctx_size,16384
+C21,predict_tokens,1024
+C21,runtime,llama.cpp.vlm
+C22,ctx_size,16384
+C22,predict_tokens,1024
+C22,runtime,llama.cpp | llama.cpp.vlm
+C23,ctx_size,16384
+C23,predict_tokens,1024
+C23,runtime,llama.cpp.vlm
+C24,ctx_size,16384
+C24,predict_tokens,1024
+C24,runtime,llama.cpp
+C25,ctx_size,16384
+C25,predict_tokens,1024
+C25,runtime,llama.cpp.vlm
+C26,ctx_size,16384
+C26,predict_tokens,1024
+C26,runtime,llama.cpp
+C27,ctx_size,16384
+C27,predict_tokens,1024
+C27,runtime,llama.cpp
+C28,ctx_size,16384
+C28,predict_tokens,1024
+C28,runtime,llama.cpp
+C29,chip,Apple M5 Pro
+C29,ctx_size,32768
+C29,mlx_lm_version,0.31.3
+C29,mlx_version,0.31.2
+C29,platform,darwin
+C29,predict_tokens,192
+C29,prompt_style,lfm_minimal_summary_v3
+C29,quant,8bit
+C29,runtime,mlx_lm
+C29,unified_memory_gb,48
+C30,chip,Apple M5 Pro
+C30,ctx_size,32768
+C30,mlx_lm_version,0.31.3
+C30,mlx_version,0.31.2
+C30,platform,darwin
+C30,predict_tokens,192
+C30,prompt_style,lfm_minimal_summary_v3
+C30,quant,8bit
+C30,runtime,mlx_lm
+C30,unified_memory_gb,48
+C31,chip,Apple M5 Pro
+C31,ctx_size,16384 | 32768
+C31,mlx_lm_version,0.31.3
+C31,mlx_version,0.31.2
+C31,platform,darwin
+C31,predict_tokens,1024 | 12000 | 2048 | 4096 | 8192
+C31,quant,8bit
+C31,runtime,mlx_lm
+C31,unified_memory_gb,48
+C32,chip,Apple M5 Pro
+C32,ctx_size,16384
+C32,mlx_lm_version,0.31.3
+C32,mlx_version,0.31.2
+C32,platform,darwin
+C32,predict_tokens,1024
+C32,quant,OptiQ-4bit
+C32,runtime,mlx_lm
+C32,unified_memory_gb,48
+C33,chip,Apple M5 Pro
+C33,ctx_size,16384 | 32768
+C33,mlx_lm_version,0.31.3
+C33,mlx_version,0.31.2
+C33,platform,darwin
+C33,predict_tokens,1024 | 192
+C33,prompt_style,minicpm5_minimal_summary_v2
+C33,runtime,mlx_lm | mlx_lm_minicpm5
+C33,unified_memory_gb,48
+C34,chip,Apple M5 Pro
+C34,ctx_size,16384
+C34,mlx_lm_version,0.31.3
+C34,mlx_version,0.31.2
+C34,mlx_vlm_version,0.5.0
+C34,platform,darwin
+C34,predict_tokens,1024
+C34,quant,bf16
+C34,runtime,mlx_vlm
+C34,unified_memory_gb,48
+C35,chip,Apple M5 Pro
+C35,ctx_size,16384
+C35,mlx_lm_version,0.31.3
+C35,mlx_version,0.31.2
+C35,mlx_vlm_version,0.5.0
+C35,platform,darwin
+C35,predict_tokens,1024
+C35,quant,5bit
+C35,runtime,mlx_vlm
+C35,unified_memory_gb,48
+C36,chip,Apple M5 Pro
+C36,ctx_size,16384
+C36,mlx_lm_version,0.31.3
+C36,mlx_version,0.31.2
+C36,mlx_vlm_version,0.5.0
+C36,platform,darwin
+C36,predict_tokens,1024
+C36,quant,5bit
+C36,runtime,mlx_vlm
+C36,unified_memory_gb,48
+C37,chip,Apple M5 Pro
+C37,ctx_size,16384
+C37,mlx_lm_version,0.31.3
+C37,mlx_version,0.31.2
+C37,mlx_vlm_version,0.5.0
+C37,platform,darwin
+C37,predict_tokens,1024 | 2048
+C37,quant,8bit
+C37,runtime,mlx_vlm
+C37,unified_memory_gb,48
+C45,ctx_size,4096
+C45,device,auto | mps
+C45,dtype,bfloat16
+C45,predict_tokens,512
+C45,runtime,transformers_prefix_lm
+C45,torch_version,2.12.0
+C45,transformers_version,5.9.0
+C46,ctx_size,4096
+C46,device,auto | mps
+C46,dtype,bfloat16
+C46,predict_tokens,512
+C46,runtime,transformers_causal_lm
+C46,torch_version,2.12.0
+C46,transformers_version,5.9.0

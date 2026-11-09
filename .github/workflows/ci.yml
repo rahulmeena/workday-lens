@@ -18,6 +18,8 @@ jobs:
           cache-dependency-path: backend/requirements.txt
       - run: python -m pip install -r backend/requirements.txt
       - run: python -m pytest backend/tests -q
+      - run: python -m unittest evaluations.test_exports -v
+      - run: python evaluations/build_report.py && git diff --exit-code -- docs/evaluation-models.md docs/evaluation-judges.md docs/evaluation-prompts.md
       - run: python scripts/demo.py --seed-only
   frontend:
     runs-on: ubuntu-latest

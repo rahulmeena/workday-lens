@@ -1,0 +1,5 @@
+experiment,variant,n,same_source_set,combined,headline_sim,summary_sim,field_score,evidence_overlap,noncollapse,confidence_sanity,elapsed_ms,parse_ok_rate,compacted_count,predicted_per_second,predicted_per_second_n,prompt_per_second,prompt_per_second_n
+gemma4-12b-full50,default,50,True,0.336682,0.465465,0.078007,0.45026,0.145857,1.0,1.0,17511.32,1.0,0,22.448824,50,637.095055,50
+gemma4-12b-full50,gemma4_generic_v1,50,True,0.355836,0.446487,0.074241,0.53674,0.22049,1.0,1.0,18230.76,1.0,0,24.715963,50,712.778908,50
+gemma4-12b-full50,gemma4_generic_v2,50,True,0.357129,0.440404,0.074742,0.557176,0.204035,1.0,1.0,15909.76,1.0,0,27.517711,50,836.399759,50
+gemma4-12b-full50,lfm_minimal_summary_v6,50,True,0.234483,0.411509,0.071213,0.084449,0.0,1.0,1.0,4376.68,1.0,0,28.18057,50,856.929806,50

@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "silver_agreement_score_1_to_5": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "silver_agreement_normalized": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "coverage_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "precision_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "faithfulness_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "noise_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "usefulness_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "final_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "key_facts_total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "key_facts_matched": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "candidate_facts_total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "candidate_facts_supported": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "candidate_facts_irrelevant": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unsupported_claim_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "contradicted_claim_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "over_specific_claim_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "missing_facts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extra_facts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rationale": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "silver_agreement_score_1_to_5",
+    "silver_agreement_normalized",
+    "coverage_score",
+    "precision_score",
+    "faithfulness_score",
+    "noise_score",
+    "usefulness_score",
+    "final_score",
+    "key_facts_total",
+    "key_facts_matched",
+    "candidate_facts_total",
+    "candidate_facts_supported",
+    "candidate_facts_irrelevant",
+    "unsupported_claim_count",
+    "contradicted_claim_count",
+    "over_specific_claim_count",
+    "missing_facts",
+    "extra_facts",
+    "contradictions",
+    "rationale"
+  ]
+}
