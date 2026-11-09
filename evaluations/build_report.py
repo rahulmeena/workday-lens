@@ -136,9 +136,9 @@ def plot():
     import matplotlib.pyplot as plt
     configs = {r['config_id']: r for r in read('configurations.csv')}
     rows = [r for r in read('judge-scores.csv') if r['suite']=='source_grounded']
-    rows.sort(key=lambda r:(configs[r['config_id']]['base_model'].lower(), configs[r['config_id']]['modality']))
-    plt.rcParams.update({'font.family':'DejaVu Sans','svg.fonttype':'none','svg.hashsalt':'workday-lens-evaluation-v1','font.size':11})
-    fig, ax = plt.subplots(figsize=(13.5,10.1),facecolor='#fcfaf5')
+    rows.sort(key=lambda r: (-float(r['final_score']), r['config_id']))
+    plt.rcParams.update({'font.family':'DejaVu Sans','svg.fonttype':'path','svg.hashsalt':'workday-lens-evaluation-v1','font.size':11})
+    fig, ax = plt.subplots(figsize=(15,10.1),facecolor='#fcfaf5')
     ax.set_facecolor('#fcfaf5')
     y = list(range(len(rows)))
     ax.barh([i-.17 for i in y],[float(r['faithfulness_score']) for r in rows],height=.29,color='#3d5f5a',label='Faithfulness')
@@ -153,13 +153,15 @@ def plot():
     ax.tick_params(axis='y',length=0,pad=12)
     for spine in ax.spines.values():spine.set_visible(False)
     for i,r in enumerate(rows):
-        ax.text(1.025,i,f"n = {int(r['succeeded']):,}",va='center',fontsize=10,color='#686159',transform=ax.get_yaxis_transform())
+        ax.text(1.025,i,f"{float(r['final_score']):.2f}  ·  n={int(r['succeeded']):,}",va='center',fontsize=10,color='#686159',transform=ax.get_yaxis_transform())
+    ax.text(1.025,1.025,'Final /100 · count',fontsize=10,color='#686159',transform=ax.transAxes)
     ax.legend(loc='upper center',bbox_to_anchor=(.5,1.075),ncol=2,frameon=False)
     fig.text(.035,.965,'Workday Lens · source-grounded evaluation',fontsize=24,fontweight='bold',color='#282b28')
     fig.text(.035,.927,'8,097 completed judgments · GPT-5.4-mini · all 16 configurations in this cohort',fontsize=12,color='#686159')
+    fig.text(.035,.895,'Sorted by recorded mean overall source-grounded score, highest first',fontsize=11,color='#686159')
     fig.text(.035,.055,'Historical results, not a controlled leaderboard: sample sizes, source subsets and modalities differ.',fontsize=11,color='#686159')
     fig.text(.035,.032,'Raw activity stays private. Full scores, failures, rubrics and aggregation code are published in the repository.',fontsize=11,color='#686159')
-    fig.subplots_adjust(left=.39,right=.88,top=.845,bottom=.12)
+    fig.subplots_adjust(left=.36,right=.84,top=.81,bottom=.12)
     for extension in ['svg','png']:
         fig.savefig(DOCS/f'images/evaluation-source-grounded.{extension}',dpi=140,facecolor=fig.get_facecolor(),metadata={'Date':None} if extension=='svg' else None)
     svg = DOCS/'images/evaluation-source-grounded.svg'

@@ -1,10 +1,12 @@
-<p align="center"><img src="frontend/public/workday-lens-icons/workday-lens-logo.svg" width="88" alt="Workday Lens" /></p>
+![Navya AI — a private memory of your workday](docs/images/navya-banner.webp)
 
 # Workday Lens
 
-**Turn a day of desktop activity into a timeline you can understand.**
+**A private memory of your workday.**
 
-Workday Lens captures desktop context, groups it into activity windows, and uses language models to reconstruct what you worked on, why, and how the day unfolded. It combines native capture, local storage, hierarchical summaries, and an interactive timeline.
+Turn a day of desktop activity into a timeline you can understand. Workday Lens by Navya AI follows the context of your work across apps, documents, browsers and meetings, then turns it into clear insights: what you worked on, where your focus went, and how the day unfolded.
+
+That history becomes a lasting, structured memory on your machine, from short activity windows to daily and weekly summaries. It is also a foundation for giving your AI agents useful work context. Developers can retrieve summaries through the local API today; dedicated agent connectors are on the [roadmap](docs/roadmap.md#memory-for-your-agents). [Explore the agent-memory direction →](docs/agent-memory.md)
 
 [Windows beta download](https://navya.ai/download) · [Try the demo](#try-it-with-synthetic-data) · [Model support](#model-support) · [Evaluation](docs/evaluation.md) · [Architecture](docs/architecture.md)
 
@@ -41,10 +43,17 @@ The evaluation workflow combines GPT-5.4/GPT-5.5/GPT-5.4-mini judges, reference 
 - **Reconstructs context:** turns accessibility events and application metadata into structured activity descriptions, goals, projects, and next steps.
 - **Summarizes at multiple scales:** builds from short windows to 5-minute, 15-minute, hourly, daily, and weekly summaries on the development branch.
 - **Makes results inspectable:** drill into the timeline, source excerpts, model responses, token usage, and latency.
+- **Builds reusable work context:** keeps structured summaries, goals, projects and their time ranges accessible through a local API for developer-built agent workflows.
 - **Supports local inference:** the macOS development version can run Qwen through llama.cpp; a configured OpenAI provider is also available.
 - **Keeps you in control:** local capture buffers, local storage, pause/resume, and optional screenshots disabled by default on macOS.
 
 This is a personal activity tool. It infers context from incomplete evidence; its summaries are not an authoritative record of productivity. It does not autonomously operate your desktop.
+
+## Memory for your agents
+
+Your work does not begin when you open a chat. Workday Lens preserves the context around it: the project you were working on, the task you returned to, and the details behind a daily summary. The aim is to let the agents you choose start with that context instead of asking you to reconstruct it each time.
+
+Today, developers can use the local API to retrieve selected summaries and inspect their underlying activity. Ready-made connectors for assistants such as Claude and Codex, portable context exports, and controls for scoped sharing are planned. [Current API and integration roadmap →](docs/agent-memory.md)
 
 ## Platform status
 

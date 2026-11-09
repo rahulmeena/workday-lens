@@ -55,6 +55,6 @@ The macOS resource monitor reports process usage, queue backlog, and Qwen throug
 - Single-user SQLite app; no multi-user authorization or public-server deployment.
 - Capture quality depends on each application's accessibility support.
 - Event IDs exist, but exactly-once delivery across upload retries is not guaranteed.
-- No published accuracy benchmark or universal performance claim.
+- Historical evaluation aggregates are [published](evaluation.md); a public held-out benchmark and downstream agent-memory evaluation remain planned.
 - Inference and summarization only; no autonomous desktop actions.
 - Platform convergence, retention controls, macOS distribution, and broader tests remain roadmap work.

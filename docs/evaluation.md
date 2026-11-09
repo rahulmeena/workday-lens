@@ -25,7 +25,7 @@ The generation archive covers 3,051 distinct `(level, source_id)` items and 69 s
 
 ![Real source-grounded evaluation results for 16 configurations](images/evaluation-source-grounded.svg)
 
-This cohort asks the judge to check claims against source text/source items and, when available, up to one attached screenshot. It does not use the generated silver label. All 16 configurations in this cohort are plotted; not every generation model received this rubric. **Different rows have different sample sizes and evidence subsets**, so this chart is a record of development results, not a controlled ranking of general model capability.
+This cohort asks the judge to check claims against source text/source items and, when available, up to one attached screenshot. It does not use the generated silver label. All 16 configurations in this cohort are plotted, **sorted by recorded mean source-grounded final score, highest first**. Faithfulness and coverage remain separate bars; final score and sample count are shown alongside each row. Not every generation model received this rubric. **Different rows have different sample sizes and evidence subsets**, so this chart is a record of development results, not a controlled ranking of general model capability.
 
 The [complete judge tables](evaluation-judges.md) include final scores, faithfulness, coverage, precision, usefulness, noise and hallucination rate. The [CSV](../evaluations/results/judge-scores.csv) also includes claim counts and the non-null denominator for each metric.
 

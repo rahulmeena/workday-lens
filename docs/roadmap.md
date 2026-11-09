@@ -36,3 +36,13 @@ Today, Windows beta uses OpenAI for real inference; macOS `main` already impleme
 - Pagination and incremental updates for long histories.
 
 Historical aggregate scores and their limitations are published. A shareable dataset and controlled comparisons are the next step before making general quality or performance claims.
+
+## Memory for your agents
+
+- Turn the existing local activity/rollup API into a documented, versioned interface for agent context.
+- Add portable context exports and ready-made connectors for assistants such as Claude and Codex, including an MCP interface.
+- Let users select projects, time ranges and fields before sharing context with an agent.
+- Preserve timestamps, source links and uncertainty when context is exported or summarized again.
+- Evaluate retrieval usefulness and evidence fidelity in downstream agent tasks.
+
+Structured summaries and hierarchy access already exist in `main`. Packaged connectors, context exports and scoped sharing controls are planned; see [the current foundation](agent-memory.md).

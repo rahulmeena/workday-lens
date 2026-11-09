@@ -1,9 +1,10 @@
 # Interface previews
 
-The README opens with the dashboard and hierarchical activity timeline published on [navya.ai](https://navya.ai). These are website design previews, not a claim that every depicted view or feature is available in both desktop versions.
+The README uses the space-themed Navya banner, dashboard and hierarchical activity timeline published on [navya.ai](https://navya.ai). The interface images are website design previews, not a claim that every depicted view or feature is available in both desktop versions.
 
 | Preview | Published asset | Repository copy |
 | --- | --- | --- |
+| Navya space banner | [hero.webp](https://navya.ai/hero.webp) | [navya-banner.webp](images/navya-banner.webp) |
 | Daily dashboard | [today-light.webp](https://navya.ai/today-light.webp) | [navya-dashboard.webp](images/navya-dashboard.webp) |
 | Activity timeline | [timeline-light.webp](https://navya.ai/timeline-light.webp) | [navya-timeline.webp](images/navya-timeline.webp) |
 
