@@ -6,17 +6,19 @@
 
 Workday Lens captures desktop context, groups it into activity windows, and uses language models to reconstruct what you worked on, why, and how the day unfolded. It combines native capture, local storage, hierarchical summaries, and an interactive timeline.
 
-[Windows beta download](https://navya.ai/download) · [Try the demo](#try-it-with-synthetic-data) · [Evaluation](docs/evaluation.md) · [Architecture](docs/architecture.md) · [Contributing](CONTRIBUTING.md)
+[Windows beta download](https://navya.ai/download) · [Try the demo](#try-it-with-synthetic-data) · [Model support](#model-support) · [Evaluation](docs/evaluation.md) · [Architecture](docs/architecture.md)
+
+*Interface previews from [navya.ai](https://navya.ai). These illustrate the product design; available features and appearance vary by platform/version. [Running-app screenshots](docs/interface-preview.md) show the current source demo.*
 
 ### Daily dashboard
 
-![Workday Lens dashboard with synthetic sample data](docs/images/dashboard.jpg)
+![Workday Lens daily dashboard — website design preview](docs/images/navya-dashboard.webp)
 
 ### Detailed timeline
 
-![Workday Lens hierarchical timeline with synthetic sample data](docs/images/timeline.jpg)
+![Workday Lens hierarchical activity timeline — website design preview](docs/images/navya-timeline.webp)
 
-*Both product screenshots use fictional activity. The evaluation section below contains real aggregate benchmark results; private work history is not published.*
+*The evaluation below contains real aggregate benchmark results. Private work history is not published.*
 
 [![CI](https://github.com/rahulmeena/workday-lens/actions/workflows/ci.yml/badge.svg)](https://github.com/rahulmeena/workday-lens/actions/workflows/ci.yml)
 
@@ -26,9 +28,11 @@ Development included **46 model/runtime/modality/prompt configurations across 25
 
 The evaluation workflow combines GPT-5.4/GPT-5.5/GPT-5.4-mini judges, reference agreement, source-grounded faithfulness/coverage/precision, schema validity, latency and token-use tracking. Four retained 50-card prompt sweeps show how prompt changes were compared, including regressions.
 
-![Real source-grounded quality results](docs/images/evaluation-source-grounded.svg)
+![Open-weight and proprietary model results in the same recorded text-only reference-judge run](docs/images/evaluation-model-comparison.svg)
 
-**[Read the evaluation report →](docs/evaluation.md)** · [All model results](docs/evaluation-models.md) · [Judge scores](docs/evaluation-judges.md) · [Prompt experiments](docs/evaluation-prompts.md) · [Data, rubrics and aggregation code](evaluations/README.md)
+**Highest recorded mean scores in this comparison:** Qwen3.6-27B Q4_K_M leads the open-weight group at **55.45/100** (588 judgments); GPT-5.4 leads the proprietary group at **78.38/100** (589). This is run R05, text-only, with GPT-5.4-mini judging reference agreement. Sample sets differ; these are historical observations, not universal “best model” claims. The separate source-grounded rubric measures support in captured evidence.
+
+**[Open-weight vs. proprietary results →](docs/evaluation-comparison.md)** · [Evaluation methods](docs/evaluation.md) · [All model results](docs/evaluation-models.md) · [Judge scores](docs/evaluation-judges.md) · [Prompt experiments](docs/evaluation-prompts.md) · [Data and code](evaluations/README.md)
 
 *These are retrospective development results with uneven coverage, not a controlled leaderboard. Counts include failed generation configurations; 24 of the 25 local model identities produced successful outputs. Repeated judgments cover 589 distinct source buckets, not 55,878 independent examples. The report distinguishes measured quality, heuristics and unavailable metrics.*
 
@@ -51,6 +55,19 @@ This is a personal activity tool. It infers context from incomplete evidence; it
 | macOS | Development version used and verified by the maintainer; no public installer yet | `main` · [Run from source](docs/development.md) |
 
 The platform versions currently use separate source branches. `main` contains the newer macOS capture pipeline, hierarchical timeline, local Qwen integration, and resource monitor. These features are **not all present in the downloadable Windows beta**. See [versions and provenance](docs/versions.md) before building or reporting an issue.
+
+## Model support
+
+The project is open source; the inference provider depends on the version you run. **Evaluating a model does not mean it is integrated into the desktop app.**
+
+| Version / workflow | Real inference available today | Maturity |
+| --- | --- | --- |
+| Windows beta source (`windows-beta`, `windows-arm64-beta`) | OpenAI API with your own API key | Existing beta implementation; no local-model provider in these branches |
+| macOS development (`main`) | OpenAI API **or local Qwen3.5-4B Q4_K_M via llama.cpp** | Local integration exists; source setup and validation required; no public macOS installer |
+| Evaluation harness | 25 local/open-weight and 4 proprietary model identities investigated | Research coverage; not a list of supported app providers |
+| Synthetic demo | No model or API key required | Deterministic sample output, not real inference |
+
+Local Qwen handles activity windows, hierarchical summaries and day stories; Gantt ranking/composition currently use deterministic fallbacks in local mode. Broader local-model choice, Windows local inference, and packaged setup are [roadmap work](docs/roadmap.md#inference-and-model-choice). [Provider details and code references →](docs/model-support.md)
 
 ## Try it with synthetic data
 

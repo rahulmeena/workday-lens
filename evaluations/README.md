@@ -1,6 +1,6 @@
 # Evaluation data and tooling
 
-Start with the [evaluation report](../docs/evaluation.md). This directory contains aggregate results from the historical benchmark, the original judge rubrics/schemas, a reusable prompt formatter, the original prompt-scoring heuristic, and the code used to prepare the public report.
+Start with the [evaluation report](../docs/evaluation.md) or the [open-weight/proprietary comparison](../docs/evaluation-comparison.md). This directory contains aggregate results from the historical benchmark, the original judge rubrics/schemas, a reusable prompt formatter, the original prompt-scoring heuristic, and the code used to prepare the public report.
 
 No private activity dataset, screenshots, source IDs, individual model outputs, judge rationales, API batch IDs, credentials or runtime secrets are included. CSVs are real aggregate measurements, not demo fixtures. The clinical/behavioral inference fields from the original experimental automation schema are intentionally not exported.
 
@@ -32,7 +32,7 @@ python evaluations/build_report.py
 python -m unittest evaluations.test_exports -v
 ```
 
-The tables use only the standard library. For the chart:
+The tables use only the standard library. The grouped model comparison selects run R05, reference scoring, GPT-5.4-mini judgments and text-only candidates, then sorts recorded mean scores within each model group. It does not combine different judge runs or assert matched evidence sets. For both charts:
 
 ```bash
 python -m pip install -r evaluations/requirements-report.txt

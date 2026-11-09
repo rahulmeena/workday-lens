@@ -34,10 +34,53 @@ def label(row):
     return f"{name} · {row['modality'].replace('_', '+')}"
 
 
+def comparison_groups(configs, judges):
+    """Keep one rubric/run/judge/modality; never mix opportunity or control scores."""
+    return {
+        kind: sorted(
+            [r for r in judges
+             if (r['run'], r['suite'], r['judge']) == ('R05', 'reference', 'gpt-5.4-mini')
+             and configs[r['config_id']]['modality'] == 'text'
+             and configs[r['config_id']]['kind'] == kind
+             and r['final_score'] != ''],
+            key=lambda r: (-float(r['final_score']), r['config_id']),
+        ) for kind in ('local_weights', 'proprietary_api')
+    }
+
+
+def build_comparison(configs, judges):
+    groups = comparison_groups(configs, judges)
+    lines = [
+        '# Open-weight and proprietary model comparison\n\n',
+        '[Evaluation methods](evaluation.md) · [All judge cohorts](evaluation-judges.md) · [Runtime metrics](evaluation-models.md) · [Application model support](model-support.md)\n\n',
+        'This view separates **open-weight/local candidates** from **proprietary API candidates** using the same recorded run (**R05**), reference rubric, **GPT-5.4-mini judge**, and **text-only candidate modality**. All 29 matching configurations are listed: 26 local and 3 proprietary. Rows are sorted by recorded mean final score within each group. The figure shows the first six local rows and all three proprietary rows.\n\n',
+        '![Grouped historical model scores](images/evaluation-model-comparison.svg)\n\n',
+        '**“Highest recorded score” applies only to this historical comparison.** Source subsets, sample counts, hierarchy mix and prompt/runtime settings still differ; this is not a matched-input experiment or a general model leaderboard. The score measures agreement with GPT-5.4-generated references, not human-validated accuracy. GPT-5.4 is also the reference family, and GPT-5.4-mini is both judge and a candidate, so model-family/self-preference bias is possible.\n\n',
+        'The GPT-5.4 text+image self-reference control is excluded by the text-only filter. GPT-5.4-nano was evaluated in other runs, but has no quality result in this particular R05 comparison; it is not silently assigned a score from a different judge. See [every run](evaluation-judges.md).\n\n',
+        '`Final` is the recorded mean on the original 0–100 scale. Other quality scores use 0–1. `N` counts successful judgments, not independent examples. No confidence intervals or significance claims are made. Quantization, runtime and prompt variants are preserved below; “open-weight” does not imply identical model licenses.\n\n',
+    ]
+    for kind, title in [('local_weights', 'Open-weight / local models'), ('proprietary_api', 'Proprietary API models')]:
+        rows = groups[kind]
+        top = rows[0]
+        lines += [f'## {title}\n\n',
+                  f"Highest recorded mean: **{label(configs[top['config_id']])}**, **{num(top['final_score'])}/100**, N = {count(top['succeeded'])}.\n\n",
+                  table(['ID', 'Configuration', 'N', 'Failed', 'Final', 'Faithful', 'Coverage', 'Precision', 'Useful', 'Noise'],
+                        [[r['config_id'], label(configs[r['config_id']]), count(r['succeeded']), r['failed'], num(r['final_score']), num(r['faithfulness_score']), num(r['coverage_score']), num(r['precision_score']), num(r['usefulness_score']), num(r['noise_score'])] for r in rows]), '\n']
+    lines += [
+        '## Source-grounded quality is a separate view\n\n',
+        'The source-grounded run checks claims against captured evidence and reports hallucination rate as well as faithfulness, coverage, precision and usefulness. It covers a different set of 16 configurations, so its values are not merged with this reference comparison. In particular, the newer Qwen3.6 and Gemma 4 configurations above do not have source-grounded results in the retained archive. [Source-grounded report](evaluation.md#source-grounded-results) · [Full score table](evaluation-judges.md#source-grounded--gpt-54-mini--r01).\n\n',
+        '## From evaluation to deployment\n\n',
+        'Windows beta currently uses the OpenAI API. macOS development supports OpenAI and local Qwen3.5-4B Q4_K_M with `generic_v8` (C08 in the historical archive). This integration choice is not a claim that Qwen3.5-4B is the highest-scoring candidate. The other evaluated models are research candidates, not interchangeable providers already shipped in the app. [Support matrix](model-support.md) · [Roadmap](roadmap.md#inference-and-model-choice).\n\n',
+        'Source: [judge aggregates](../evaluations/results/judge-scores.csv), joined by configuration ID to the [model inventory](../evaluations/results/configurations.csv). Regenerate with `python evaluations/build_report.py`; add `--plot` after installing the report dependencies to regenerate the figure.\n',
+    ]
+    (DOCS / 'evaluation-comparison.md').write_text(''.join(lines))
+
+
 def build():
     configs = read("configurations.csv")
     by_id = {row["config_id"]: row for row in configs}
     judges = read("judge-scores.csv")
+    build_comparison(by_id, judges)
     intro = "[Evaluation overview](evaluation.md) · [Judge scores](evaluation-judges.md) · [Runtime and inventory](evaluation-models.md) · [Prompt experiments](evaluation-prompts.md)\n\n"
     lines = ["# Model inventory and runtime results\n\n", intro,
              "Generated from the [public aggregate CSV](../evaluations/results/configurations.csv). All 46 normalized configurations are included, including failed and partial runs. `N` counts persisted generation records, including reference/teacher generations; it is not a count of independent examples or API attempts.\n\n",
@@ -120,6 +163,45 @@ def plot():
     for extension in ['svg','png']:
         fig.savefig(DOCS/f'images/evaluation-source-grounded.{extension}',dpi=140,facecolor=fig.get_facecolor(),metadata={'Date':None} if extension=='svg' else None)
     svg = DOCS/'images/evaluation-source-grounded.svg'
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines()) + '\n')
+    plt.close(fig)
+
+    groups = comparison_groups(configs, read('judge-scores.csv'))
+    plt.rcParams.update({'svg.fonttype': 'path'})
+    fig, axes = plt.subplots(2, 1, figsize=(13.5, 9.4),
+                             gridspec_kw={'height_ratios': [6, 3]}, facecolor='#fcfaf5')
+    for ax, kind, title, color, limit in zip(
+            axes, ('local_weights', 'proprietary_api'),
+            ('Open-weight / local · highest six of 26 configurations', 'Proprietary APIs · all three configurations'),
+            ('#3d5f5a', '#b97528'), (6, 3)):
+        selected = groups[kind][:limit]
+        y = list(range(len(selected)))
+        ax.set_facecolor('#fcfaf5')
+        ax.barh(y, [float(r['final_score']) for r in selected], height=.55, color=color)
+        ax.set_yticks(y, [f"{configs[r['config_id']]['base_model']}  ·  {r['config_id']}" for r in selected])
+        ax.invert_yaxis()
+        ax.set_xlim(0, 100)
+        ax.set_xticks([0, 20, 40, 60, 80, 100])
+        ax.set_title(title, loc='left', fontsize=13, fontweight='bold', pad=14, color='#282b28')
+        ax.grid(axis='x', alpha=.15)
+        ax.set_axisbelow(True)
+        ax.tick_params(axis='y', length=0, pad=10)
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        for i, r in enumerate(selected):
+            ax.text(float(r['final_score']) + 1.2, i,
+                    f"{float(r['final_score']):.2f}  ·  n={int(r['succeeded']):,}",
+                    va='center', fontsize=10, color='#514b45')
+    axes[1].set_xlabel('Mean reference-judge final score · 0–100')
+    fig.text(.035, .96, 'Workday Lens · model comparison', fontsize=24, fontweight='bold', color='#282b28')
+    fig.text(.035, .922, 'Run R05 · text-only candidates · GPT-5.4-mini judge · GPT-5.4 silver references', fontsize=12, color='#686159')
+    fig.text(.035, .065, 'Historical results: source subsets, prompts and sample counts differ. Scores are not general model rankings.', fontsize=11, color='#686159')
+    fig.text(.035, .04, 'Full tables preserve quantization, runtime and prompt variants. Evaluation coverage is not app-provider support.', fontsize=11, color='#686159')
+    fig.subplots_adjust(left=.32, right=.94, top=.84, bottom=.15, hspace=.7)
+    for extension in ['svg', 'png']:
+        fig.savefig(DOCS/f'images/evaluation-model-comparison.{extension}', dpi=140,
+                    facecolor=fig.get_facecolor(), metadata={'Date': None} if extension == 'svg' else None)
+    svg = DOCS / 'images/evaluation-model-comparison.svg'
     svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines()) + '\n')
     plt.close(fig)
 

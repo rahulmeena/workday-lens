@@ -1,8 +1,10 @@
 # Evaluation
 
-Workday Lens was developed alongside a model-comparison and prompt-regression workflow. This report publishes **real aggregate results from the saved benchmark database**, collected May 10–July 1, 2026 and exported on November 10, 2026. The product screenshots elsewhere in this repository use synthetic data; these measurements do not.
+Workday Lens was developed alongside a model-comparison and prompt-regression workflow. This report publishes **real aggregate results from the saved benchmark database**, collected May 10–July 1, 2026 and exported on November 10, 2026. The website design previews and synthetic demo screenshots are illustrations; these measurements come from the historical evaluation archive.
 
-[All models and runtime](evaluation-models.md) · [All judge scores](evaluation-judges.md) · [Prompt experiments](evaluation-prompts.md) · [Metric definitions](evaluation-metrics.md) · [Data and code](../evaluations/README.md)
+[Open-weight vs. proprietary comparison](evaluation-comparison.md) · [All models and runtime](evaluation-models.md) · [All judge scores](evaluation-judges.md) · [Prompt experiments](evaluation-prompts.md) · [Metric definitions](evaluation-metrics.md) · [Data and code](../evaluations/README.md)
+
+**Evaluation coverage is broader than application support.** Windows beta uses OpenAI for real inference; macOS `main` also implements local Qwen3.5-4B. The model inventory is a research record, not a provider compatibility list. [Current model support](model-support.md).
 
 | Scope | Verified count | Interpretation |
 | --- | ---: | --- |

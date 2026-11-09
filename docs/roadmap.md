@@ -16,6 +16,16 @@ These are contribution directions, not release-date commitments.
 - Stronger local API trust boundaries and redaction coverage.
 - Tests for interrupted uploads, duplicate events, queue recovery, and time-zone boundaries.
 
+## Inference and model choice
+
+- Bring local inference to Windows while retaining the existing OpenAI API path.
+- Package and validate the existing macOS Qwen3.5-4B integration on fresh machines.
+- Add documented provider/model selection for additional local and cloud models, guided by measured quality and resource use.
+- Close feature gaps between providers, including local Gantt ranking/composition.
+- Compare candidate defaults on matched source inputs, with quality, memory, latency and cost reported separately.
+
+Today, Windows beta uses OpenAI for real inference; macOS `main` already implements OpenAI and local Qwen. [Current support and limitations](model-support.md).
+
 ## Context quality
 
 - Build on the [published evaluation archive](evaluation.md): 46 configurations, reference/source-grounded judgments, runtime metrics and prompt-regression sweeps.
