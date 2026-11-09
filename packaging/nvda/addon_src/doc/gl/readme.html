@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>Speech Logger 25.1.0</title>
+</head>
+<body>
+<h1>Speech Logger</h1>
+<h3>NVDA Speech Logger add-on</h3>
+<ul>
+<li>Autor: Luke Davis, con contribucións de James Scholes</li>
+<li>Descargar <a href="https://www.nvaccess.org/addonStore/legacy?file=speechLogger">versión estable</a></li>
+<li>Compatibilidade con NVDA: 2019.3.1 e posteriores</li>
+</ul>
+<p>An <a href="https://nvaccess.org/">NVDA</a> add-on to log speech to a file or files.  It can log speech
+generated on the local machine into a text file.  It can also log speech
+from a remote machine received through the <a href="https://nvdaremote.com/">NVDA Remote</a> add-on, either
+to the same or a different file.</p>
+<h3>Configuración</h3>
+<p>To configure this add-on, open the NVDA menu, go to Preferences, then
+Settings, then Speech Logger (NVDA+N, P, S, then press S until you get
+there, on a default U.S. English keyboard).  There is also an unassigned
+gesture in the Input Gestures "Configuration" category, which you can assign
+and use to quickly open the add-on's settings directly.  Note: the add-on
+can only be configured while in the Normal Configuration profile of NVDA.
+The add-on is not profile-aware.  If you can think of some use case that
+requires it to operate differently in different profiles, please contact the
+author or file an issue on the <a href="https://github.com/opensourcesys/speechLogger/issues/new">GitHub repo</a>.</p>
+<h3>Están dispoñibles as seguintes opcións:</h3>
+<ul>
+<li>O directorio de rexistro (log directory). Podes introducir ou explorar o
+  teu directorio de destino desexado, que debe existir xa. Pódense utilizar
+  neste campo variables do sistema como %temp%, %userprofile%, etc.</li>
+<li>Nome de arquivo do rexistro local (local log filename). O arquivo creado
+  porase no directorio de arriba. Conterá a fala rexistrada mentres o modo
+  de rexistro local estea activado. Pode ser o mesmo que o arquivo de
+  rexistro remoto. déixao en blanco para desactivar este tipo de rexistro
+  por completo.</li>
+<li>Nome de arquivo do rexistro remoto (remote log filename). O arquivo creado
+  porase no directorio de arriba. Conterá a fala rexistrada mentres o modo
+  de rexistro remoto estea activado. Pode ser o mesmo que o arquivo de
+  rexistro local. déixao en blanco para desactivar este tipo de rexistro por
+  completo.</li>
+<li>Separador (separator). Esta caixa combinada permíteche escoller un dos
+  separadores de declaración dispoñibles. consulte a continuación para máis
+  información.</li>
+<li>Separador persoalizado (custom separator). Este campo permíteche
+  introducir un separador de declaración persoalizado (consulte a
+  continuación), que se utiliza se "custom" (persoalizado) está seleccionado
+  na caixa combinada.</li>
+<li>Timestamp mode. This combobox allows you to choose between no timestamps,
+  and a timestamp at the start and end of each log session.</li>
+<li>Log speech during say-all (read to end) mode. This add-on logs speech
+  generated when you press NVDA+DownArrow (NVDA+a in laptop layout). If you
+  would rather not have that kind of narrative long reading logged, un-check
+  this box.</li>
+<li>Begin logging at startup. You can set this option to "Always", if you want
+  speech to be logged automatically when NVDA starts. This only applies to
+  local speech, and the default is "never".</li>
+</ul>
+<h4>separador de declaración</h4>
+<p>When NVDA speaks something such as "<code>recycle bin 1 of 55</code>" while it's
+reading your desktop, this is considered two separate utterances.  The first
+one is the item name ("<code>Recycle bin</code>", in this example), and the second is
+the object position information ("<code>1 of 55</code>", in this example).</p>
+<p>En función do que esteas lendo, e de como teñas NVDA configurado, pode haber
+varias declaracións separadas que se produzan durante unha soa secuencia de
+fala.</p>
+<p>No rexistro normal de NVDA en modo depuración, cada declaración individual
+sepárase con dous espazos, como está escrito no exemplo de arriba.</p>
+<p>Speech Logger allows you to separate utterances in the same way NVDA does
+(with two spaces), or by one of a few reasonable alternatives (a newline, a
+comma and a space, a tab, two underscores), or by a custom sequence of your
+own devising.</p>
+<p>If, for example, you wanted your utterance separator to be two dollar signs
+(<code>$$</code>), you would set the combobox to "custom", and enter "<code>$$</code>" (without
+the quotes), in the custom separator field.  If you wanted it to be a
+newline followed by a tab, you could enter "<code>\n\t</code>".</p>
+<h3>Controls:</h3>
+<p>This add-on has two keyboard shortcuts set by default, and one that is
+unassigned.</p>
+<p>The default gestures, which you can change in the NVDA Input Gestures
+"<code>Speech Logger</code>" category, are:</p>
+<ul>
+<li>NVDA+Alt+L: iniciar/deter rexistro de fala local.</li>
+<li>NVDA+Shift+Alt+L: iniciar/deter rexistro de fala remota.</li>
+</ul>
+<p>These are listed as "Toggles logging of local speech" and "Toggles logging
+of remote speech", respectively.</p>
+<p>Additionally, it has one unassigned gesture for opening its configuration
+panel, which you may assign from the <code>Speech Logger</code> category in NVDA's
+Input Gestures.</p>
+<h3>Unha nota sobre o rexistro de fala remota</h3>
+<p>Este complemento está pensado para traballar co complemento NVDA Remote,
+para o rexistro de fala remota.</p>
+<p>É importante saber, que non é posible iniciar o rexistro de sesións remotas
+ata que non empeces unha realmente.  Non hai forma de, por exemplo, iniciar
+o rexistro, e facer que agarde, en segundo plano, a que comece unha sesión
+remota, e que comece o rexistro nese momento.</p>
+<p>Porén, unha vez empece unha, o rexistro continuará aínda que se cambie de
+sesión.</p>
+<h3>Comentarios e solicitudes de características</h3>
+<p>If you would like to suggest a feature or report a bug, please reach out by
+email, or file an <a href="https://github.com/opensourcesys/speechLogger/issues/new">issue</a>.</p>
+<p>If you find this add-on useful, it would really help if you could <a href="https://github.com/nvaccess/addon-datastore/discussions/2636">leave a
+review</a>.</p>
+<p>As always, I appreciate hearing that my add-ons are helpful, and finding out
+what people are using them for.</p>
+<p>[[!tag dev stable]]</p>
+</body>
+</html>

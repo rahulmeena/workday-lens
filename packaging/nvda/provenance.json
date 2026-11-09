@@ -1,0 +1,7 @@
+{
+  "upstream": "https://github.com/opensourcesys/speechLogger",
+  "addon_version": "25.1.0",
+  "modified_archive_sha256": "c2987e68db057478d67725a3e40cae0a40c447476d5f5bdc1d92872ffe63bf94",
+  "nvda_version": "2025.3.3",
+  "nvda_sha256": "15b5e9864032565e7f895e4d80d767f180db0ec264e892240e675c426cfca921"
+}

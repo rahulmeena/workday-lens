@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>Speech Logger 25.1.0</title>
+</head>
+<body>
+<h1>Puhelokin tallennin</h1>
+<h3>Puhetallennin</h3>
+<ul>
+<li>Tekijä: Luke Davis yhteistyössä James Scholesin kanssa</li>
+<li>Lataa <a href="https://www.nvaccess.org/addonStore/legacy?file=speechLogger">vakaa versio</a></li>
+<li>Yhteensopivuus: NVDA 2019.3.1 ja uudemmat</li>
+</ul>
+<p>An <a href="https://nvaccess.org/">NVDA</a> add-on to log speech to a file or files.  It can log speech
+generated on the local machine into a text file.  It can also log speech
+from a remote machine received through the <a href="https://nvdaremote.com/">NVDA Remote</a> add-on, either
+to the same or a different file.</p>
+<h3>Asetusten määrittäminen</h3>
+<p>Määritä tämän lisäosan asetukset avaamalla NVDA-valikko, siirtymällä
+Asetukset-alivalikkoon, valitsemalla Asetukset ja sitten Puhelokin tallennin
+(NVDA+N, A, A ja paina sitten P niin monta kertaa, että olet kohdassa
+Puhelokin tallennin. Näppäinkomennot-valintaikkunan "Asetukset"-kategoriassa
+on myös määrittämätön näppäinkomento, jonka määritettyäsi voit käyttää sitä
+lisäosan asetusten avaamiseen. Huom: Tämä lisäosa voidaan määrittää vain
+NVDA:n normaalissa asetusprofiilissa. Lisäosa ei tue useita
+profiileja. Mikäli sinulla on mielessäsi jokin käyttötapaus, joka edellyttää
+lisäosan toimimista eri tavalla eri profiileissa, ota yhteyttä tekijään tai
+ilmoita ongelmasta <a href="https://github.com/opensourcesys/speechLogger/issues/new">GitHubin koodivarastossa</a>.</p>
+<h3>Seuraavat asetukset ovat käytettävissä:</h3>
+<ul>
+<li>Lokihakemisto. Voit kirjoittaa tai etsiä haluamasi olemassa olevan
+  hakemiston. Ympäristömuuttujia, kuten %temp%, %userprofile% jne., voidaan
+  käyttää tässä kentässä.</li>
+<li>Paikallisen puheen lokitiedosto. Luotu tiedosto sijoitetaan yllä
+  määritettyyn hakemistoon. Tämä tiedosto sisältää puheen, joka on
+  tallennettu paikallisen puheen tallennustilan ollessa käytössä. Tämä voi
+  olla sama kuin etäpuheen lokitiedosto. Poista paikallisen puheen tallennus
+  kokonaan käytöstä jättämällä tämä kenttä tyhjäksi.</li>
+<li>Etäpuheen lokitiedosto. Luotu tiedosto sijoitetaan yllä määritettyyn
+  hakemistoon. Tämä tiedosto sisältää puheen, joka on tallennettu etäpuheen
+  tallennustilan ollessa käytössä. Se voi olla sama kuin paikallisen puheen
+  lokitiedosto. Poista etäpuheen tallennus kokonaan käytöstä jättämällä tämä
+  kenttä tyhjäksi.</li>
+<li>Erotin. Tästä yhdistelmäruudusta voit valita jonkin käytettävissä olevista
+  puhekatkelmien erottimista. Katso lisätietoja alta.</li>
+<li>Mukautettu erotin. Tähän kenttään voit kirjoittaa haluamasi puhekatkelmien
+  erottimen (katso alta), jota käytetään, jos yhdistelmäruudussa on
+  valittuna "Mukautettu".</li>
+<li>Aikaleimatila. Tästä yhdistelmäruudusta voit valita kahden vaihtoehdon
+  väliltä, jotka ovat "Ei käytössä" ja "Kun lokin tallennus alkaa tai
+  päättyy".</li>
+<li>Tallenna puhelokia jatkuvaa lukua käytettäessä. Tämä lisäosa tallentaa
+  lokiin puhetta, joka tuotetaan painettaessa NVDA+Nuoli alas (kannettavien
+  näppäinasettelussa NVDA+A). Jos et halua tallentaa kaikkea jatkuvan luvun
+  aikana puhuttua tekstiä, poista tämän valintaruudun valinta.</li>
+<li>Aloita lokin tallennus käynnistettäessä. Määritä asetukseksi "Aina",
+  mikäli haluat, että puhelokin tallennus alkaa NVDA:n käynnistyessä. Tämä
+  koskee vain paikallisen järjestelmän puhetta, ja oletusasetuksena on "Ei
+  koskaan".</li>
+</ul>
+<h4>Puhekatkelmien erotin</h4>
+<p>Kun NVDA puhuu työpöytääsi lukiessaan jotain, kuten "<code>Roskakori 1/55</code>", sitä
+pidetään kahtena erillisenä puhekatkelmana. Ensimmäinen on objektin nimi
+("<code>Roskakori</code>") ja toinen on objektin sijaintitiedot ("<code>1/55</code>").</p>
+<p>Riippuen siitä, mitä luet ja miten NVDA on määritetty, yksittäisen
+puhesekvenssin aikana voi olla useita erillisiä katkelmia.</p>
+<p>Normaalin NVDA-lokin virheenkorjaustasolla jokainen yksittäinen katkelma
+erotetaan kahdella välilyönnillä, kuten yllä olevassa esimerkissä on
+kirjoitettu.</p>
+<p>Puhelokin tallentimen avulla voit erottaa katkelmat samalla tavalla kuin
+NVDA (kahdella välilyönnillä) tai jollakin muutamasta järkevästä
+vaihtoehdosta (rivinvaihto, pilkku ja välilyönti, sarkain, kaksi alaviivaa)
+tai itse määrittämälläsi mukautetulla erottimella.</p>
+<p>If, for example, you wanted your utterance separator to be two dollar signs
+(<code>$$</code>), you would set the combobox to "custom", and enter "<code>$$</code>" (without
+the quotes), in the custom separator field.  If you wanted it to be a
+newline followed by a tab, you could enter "<code>\n\t</code>".</p>
+<h3>Näppäinkomennot:</h3>
+<p>This add-on has two keyboard shortcuts set by default, and one that is
+unassigned.</p>
+<p>Oletusnäppäinkomennot, joita voit muuttaa NVDA:n
+Näppäinkomennot-valintaikkunan "<code>Puhelokin tallennin</code>" -kategoriasta, ovat:</p>
+<ul>
+<li>NVDA+Alt+L: aloita/lopeta paikallisen puheen lokin tallennus.</li>
+<li>NVDA+Vaihto+Alt+L: aloita/lopeta etäpuheen lokin tallennus.</li>
+</ul>
+<p>Ne ovat "Ottaa käyttöön tai poistaa käytöstä paikallisen puheen
+tallennuksen" ja "Ottaa käyttöön tai poistaa käytöstä etäpuheen
+tallennuksen".</p>
+<p>Siinä on lisäksi yksi määrittämätön näppäinkomento lisäosan asetuspaneelin
+avaamiseen, jolle voit määrittää näppäinkomennon NVDA:n
+Näppäinkomennot-valintaikkunan <code>Puhelokin tallennin</code> -kategoriasta.</p>
+<h3>Huomautus etäpuheen lokin tallennuksesta</h3>
+<p>Tämä lisäosa on tarkoitettu toimimaan NVDA-etäkäyttö-lisäosan kanssa
+etäpuheen lokin tallentamiseen.</p>
+<p>Etäistunnon lokin tallennusta ei voi aloittaa ennen kuin istunnon yhteys on
+muodostettu. Ei ole mahdollista esimerkiksi aloittaa lokin tallennusta ja
+odottaa valmiustilassa, kunnes etäistunto alkaa, ja aloittaa lokin
+tallennusta vasta sitten.</p>
+<p>Aloittamisen jälkeen lokin tallennus kuitenkin jatkuu etäistuntojen välillä.</p>
+<h3>Palaute ja ominaisuuspyynnöt</h3>
+<p>Jos haluat ehdottaa ominaisuutta tai ilmoittaa bugista, ota yhteyttä
+sähköpostitse tai tee <a href="https://github.com/opensourcesys/speechLogger/issues/new">ongelmaraportti</a>.</p>
+<p>Mikäli tämä lisäosa on mielestäsi hyödyllinen, auttaisi paljon, jos
+<a href="https://github.com/nvaccess/addon-datastore/discussions/2636">arvostelisit sen</a>.</p>
+<p>Kuten aina, arvostan kuullessani, että lisäosistani on hyötyä ja mihin niitä
+käytetään.</p>
+<p>[[!tag dev stable]]</p>
+</body>
+</html>
