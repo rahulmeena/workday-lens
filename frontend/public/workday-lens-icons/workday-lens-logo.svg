@@ -1,0 +1,26 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workday Lens logo">
+  <defs>
+    <linearGradient id="sky" x1="40" y1="20" x2="218" y2="236" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD166"/>
+      <stop offset="0.42" stop-color="#F97316"/>
+      <stop offset="1" stop-color="#2A102B"/>
+    </linearGradient>
+    <linearGradient id="dune1" x1="27" y1="123" x2="230" y2="178" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D86A1E"/>
+      <stop offset="1" stop-color="#6F1D2B"/>
+    </linearGradient>
+    <linearGradient id="dune2" x1="18" y1="158" x2="236" y2="202" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A8441E"/>
+      <stop offset="0.55" stop-color="#7A2330"/>
+      <stop offset="1" stop-color="#250B28"/>
+    </linearGradient>
+    <linearGradient id="dune3" x1="26" y1="192" x2="226" y2="224" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#57203A"/>
+      <stop offset="1" stop-color="#16081F"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="118" fill="url(#sky)"/>
+  <path d="M13 130C50 107 68 104 99 124C124 141 142 141 167 126C192 111 213 111 244 130V244H13V130Z" fill="url(#dune1)"/>
+  <path d="M0 165C35 151 68 149 101 162C139 178 165 183 201 169C225 160 241 158 256 162V256H0V165Z" fill="url(#dune2)"/>
+  <path d="M0 211C42 191 75 185 113 199C153 214 188 212 256 187V256H0V211Z" fill="url(#dune3)"/>
+</svg>

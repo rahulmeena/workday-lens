@@ -1,0 +1,5 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Today navigation">
+  <rect x="4" y="8" width="56" height="48" rx="12" fill="#FFF1DD"/>
+  <path d="M17 32L32 19L47 32" fill="#C65B12"/>
+  <path d="M21 30V46H30V37H34V46H43V30L32 21L21 30Z" fill="#C65B12"/>
+</svg>

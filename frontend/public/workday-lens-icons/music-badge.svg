@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Music pattern">
+  <rect x="13" y="13" width="102" height="102" rx="26" fill="#FFF6EC" stroke="#F5E6D5" stroke-width="2"/>
+  <path d="M57 77V35L88 29V72" stroke="#E46F1A" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M44 90C51.18 90 57 85.52 57 80C57 74.48 51.18 70 44 70C36.82 70 31 74.48 31 80C31 85.52 36.82 90 44 90Z" fill="#E46F1A"/>
+  <path d="M75 85C82.18 85 88 80.52 88 75C88 69.48 82.18 65 75 65C67.82 65 62 69.48 62 75C62 80.52 67.82 85 75 85Z" fill="#E46F1A"/>
+  <path d="M57 47L88 41" stroke="#E46F1A" stroke-width="7" stroke-linecap="round"/>
+</svg>

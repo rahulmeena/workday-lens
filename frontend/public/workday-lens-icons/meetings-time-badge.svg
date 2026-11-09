@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Meetings time icon">
+  <circle cx="64" cy="64" r="58" fill="#FFF6EC" stroke="#F7DCC4" stroke-width="2"/>
+  <path d="M45 57C51.6274 57 57 51.6274 57 45C57 38.3726 51.6274 33 45 33C38.3726 33 33 38.3726 33 45C33 51.6274 38.3726 57 45 57Z" stroke="#D97757" stroke-width="7" stroke-linecap="round"/>
+  <path d="M27 88C29.5 73.5 37.5 67 49 67C60.5 67 68.5 73.5 71 88" stroke="#D97757" stroke-width="7" stroke-linecap="round"/>
+  <path d="M74 54C80 54 84.5 49.5 84.5 43.5C84.5 37.5 80 33 74 33" stroke="#D97757" stroke-width="7" stroke-linecap="round"/>
+  <path d="M80 67C90 69 96 76 98 88" stroke="#D97757" stroke-width="7" stroke-linecap="round"/>
+</svg>

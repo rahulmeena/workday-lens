@@ -1,0 +1,213 @@
+<svg width="1024" height="1024" viewBox="-120 -120 1264 1264" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Main warm dune gradient -->
+    <radialGradient id="gearFill" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(390 250) rotate(52) scale(620 690)">
+      <stop offset="0" stop-color="#FFF5E8"/>
+      <stop offset="0.38" stop-color="#FFE8C9"/>
+      <stop offset="0.72" stop-color="#FFD39B"/>
+      <stop offset="1" stop-color="#F6A64D"/>
+    </radialGradient>
+
+    <!-- Soft rim gradient -->
+    <linearGradient id="rimStroke" x1="285" y1="155" x2="785" y2="890" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFEBCB"/>
+      <stop offset="0.45" stop-color="#F7B15E"/>
+      <stop offset="1" stop-color="#E99037"/>
+    </linearGradient>
+
+    <!-- Inner ring gradient -->
+    <radialGradient id="innerRing" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(500 430) rotate(76) scale(230 230)">
+      <stop offset="0" stop-color="#FFE3B3"/>
+      <stop offset="0.55" stop-color="#F8AE57"/>
+      <stop offset="1" stop-color="#EA8730"/>
+    </radialGradient>
+
+    <!-- Inner lip highlight -->
+    <linearGradient id="innerLip" x1="375" y1="330" x2="650" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFEFD9"/>
+      <stop offset="0.42" stop-color="#FDB65B"/>
+      <stop offset="1" stop-color="#D97825"/>
+    </linearGradient>
+
+    <!-- Shadow -->
+    <filter id="softShadow" x="-160" y="-160" width="1344" height="1344" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#D8892E" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#F2A24F" flood-opacity="0.18"/>
+    </filter>
+
+    <!-- Subtle bevel for puffy icon effect -->
+    <filter id="bevel" x="-160" y="-160" width="1344" height="1344" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+      <feSpecularLighting in="blur" surfaceScale="8" specularConstant="0.35" specularExponent="18"
+        lighting-color="#FFFFFF" result="spec">
+        <fePointLight x="280" y="170" z="180"/>
+      </feSpecularLighting>
+      <feComposite in="spec" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="0.55" k4="0"/>
+    </filter>
+
+    <!-- Inner ring shadow -->
+    <filter id="innerShadow" x="250" y="240" width="530" height="530" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#D97825" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="-5" stdDeviation="6" flood-color="#FFFFFF" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+
+  <!-- transparent background -->
+
+  <!-- Gear body, rounded 8-tooth shape -->
+  <g filter="url(#softShadow)">
+    <path
+      d="
+        M512 126
+        C545 126 579 126 599 130
+        C622 134 636 153 638 176
+        L641 209
+        C643 229 657 246 676 253
+        C696 261 717 257 733 244
+        L758 224
+        C777 208 801 208 819 224
+        C844 247 867 270 889 296
+        C904 314 903 340 887 358
+        L866 382
+        C852 398 848 419 856 439
+        C864 459 881 472 902 475
+        L935 479
+        C958 482 975 499 978 523
+        C982 556 982 589 978 622
+        C975 645 958 662 935 665
+        L902 669
+        C881 672 864 685 856 705
+        C848 725 852 746 866 762
+        L887 786
+        C903 804 904 830 889 848
+        C867 874 844 897 819 920
+        C801 936 777 936 758 920
+        L733 900
+        C717 887 696 883 676 891
+        C657 898 643 915 641 935
+        L638 968
+        C636 991 622 1010 599 1014
+        C566 1020 458 1020 425 1014
+        C402 1010 388 991 386 968
+        L383 935
+        C381 915 367 898 348 891
+        C328 883 307 887 291 900
+        L266 920
+        C247 936 223 936 205 920
+        C180 897 157 874 135 848
+        C120 830 121 804 137 786
+        L158 762
+        C172 746 176 725 168 705
+        C160 685 143 672 122 669
+        L89 665
+        C66 662 49 645 46 622
+        C42 589 42 556 46 523
+        C49 499 66 482 89 479
+        L122 475
+        C143 472 160 459 168 439
+        C176 419 172 398 158 382
+        L137 358
+        C121 340 120 314 135 296
+        C157 270 180 247 205 224
+        C223 208 247 208 266 224
+        L291 244
+        C307 257 328 261 348 253
+        C367 246 381 229 383 209
+        L386 176
+        C388 153 402 134 425 130
+        C445 126 479 126 512 126
+        Z"
+      transform="translate(0 -32)"
+      fill="url(#gearFill)"
+      stroke="url(#rimStroke)"
+      stroke-width="11"
+      stroke-linejoin="round"
+      filter="url(#bevel)"
+    />
+
+    <!-- soft outer highlight, inset -->
+    <path
+      d="
+        M512 148
+        C544 148 574 148 592 151
+        C604 154 612 164 613 177
+        L617 212
+        C621 244 642 270 672 282
+        C701 293 733 287 758 267
+        L784 246
+        C794 238 806 238 816 247
+        C839 269 860 290 881 314
+        C889 324 889 337 881 347
+        L859 373
+        C838 397 832 430 844 459
+        C856 489 882 510 914 514
+        L948 518
+        C961 520 969 529 971 542
+        C974 571 974 600 971 629
+        C969 642 961 651 948 653
+        L914 657
+        C882 661 856 682 844 712
+        C832 741 838 774 859 798
+        L881 824
+        C889 834 889 847 881 857
+        C860 881 839 902 816 924
+        C806 933 794 933 784 925
+        L758 904
+        C733 884 701 878 672 889
+        C642 901 621 927 617 959
+        L613 994
+        C612 1007 604 1017 592 1020
+        C562 1025 462 1025 432 1020
+        C420 1017 412 1007 411 994
+        L407 959
+        C403 927 382 901 352 889
+        C323 878 291 884 266 904
+        L240 925
+        C230 933 218 933 208 924
+        C185 902 164 881 143 857
+        C135 847 135 834 143 824
+        L165 798
+        C186 774 192 741 180 712
+        C168 682 142 661 110 657
+        L76 653
+        C63 651 55 642 53 629
+        C50 600 50 571 53 542
+        C55 529 63 520 76 518
+        L110 514
+        C142 510 168 489 180 459
+        C192 430 186 397 165 373
+        L143 347
+        C135 337 135 324 143 314
+        C164 290 185 269 208 247
+        C218 238 230 238 240 246
+        L266 267
+        C291 287 323 293 352 282
+        C382 270 403 244 407 212
+        L411 177
+        C412 164 420 154 432 151
+        C450 148 480 148 512 148
+        Z"
+      transform="translate(0 -32)"
+      fill="none"
+      stroke="#FFF4E4"
+      stroke-width="9"
+      stroke-linejoin="round"
+      opacity="0.65"
+    />
+  </g>
+
+  <!-- Inner ring -->
+  <g filter="url(#innerShadow)">
+    <circle cx="512" cy="512" r="154" fill="none" stroke="url(#innerRing)" stroke-width="45"/>
+    <circle cx="512" cy="512" r="176" fill="none" stroke="url(#innerLip)" stroke-width="9" opacity="0.75"/>
+    <circle cx="512" cy="512" r="129" fill="none" stroke="#FFF7EA" stroke-width="8" opacity="0.9"/>
+  </g>
+
+  <!-- gentle glossy highlights -->
+  <path d="M235 402C263 298 337 219 427 193" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.23"/>
+  <path d="M620 175C662 239 728 260 781 231" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" opacity="0.26"/>
+  <path d="M355 771C394 825 458 856 524 853" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.18"/>
+</svg>

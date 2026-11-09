@@ -1,0 +1,5 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Insight">
+  <path d="M32 8C22 8 15 15.5 15 25C15 31 18 36 23 39.5V45H41V39.5C46 36 49 31 49 25C49 15.5 42 8 32 8Z" stroke="#E5A111" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M25 52H39" stroke="#E5A111" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M28 58H36" stroke="#E5A111" stroke-width="4.5" stroke-linecap="round"/>
+</svg>

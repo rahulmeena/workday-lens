@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Breaks">
+  <path d="M18 25H42V38C42 45 37 50 30 50C23 50 18 45 18 38V25Z" stroke="#68A899" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M42 30H48C53 30 56 33 56 38C56 43 53 46 48 46H42" stroke="#68A899" stroke-width="5" stroke-linecap="round"/>
+  <path d="M25 12V20" stroke="#68A899" stroke-width="5" stroke-linecap="round"/>
+  <path d="M36 12V20" stroke="#68A899" stroke-width="5" stroke-linecap="round"/>
+  <path d="M18 55H43" stroke="#68A899" stroke-width="5" stroke-linecap="round"/>
+</svg>

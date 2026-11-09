@@ -1,0 +1,10 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Focus pattern sunrise">
+  <rect x="13" y="13" width="102" height="102" rx="26" fill="#FFF6EC" stroke="#F5E6D5" stroke-width="2"/>
+  <path d="M39 76C40.6 64.5 50.2 56 64 56C77.8 56 87.4 64.5 89 76" stroke="#E46F1A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M34 89H94" stroke="#E46F1A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M64 35V45" stroke="#E46F1A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M44 42L50 50" stroke="#E46F1A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M84 42L78 50" stroke="#E46F1A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M28 65H39" stroke="#E46F1A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M89 65H100" stroke="#E46F1A" stroke-width="7" stroke-linecap="round"/>
+</svg>

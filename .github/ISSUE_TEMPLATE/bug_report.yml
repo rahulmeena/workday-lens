@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible problem using synthetic or sanitized data.
+body:
+  - type: markdown
+    attributes:
+      value: "Never attach real activity logs, databases, confidential screenshots, or keys. See SECURITY.md for vulnerabilities."
+  - type: input
+    id: platform
+    attributes:
+      label: Platform and source branch
+      placeholder: macOS / Apple Silicon / main
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include expected and actual behavior with fictional input.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Sanitized error details
