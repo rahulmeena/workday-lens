@@ -152,6 +152,6 @@ swift build --package-path macos/WorkdayLensCapture
 
 ## About
 
-Built by [Rahul Meena](https://github.com/rahulmeena). Workday Lens began as a closed-source project and is being developed in the open from this public source snapshot. [navya.ai](https://navya.ai) hosts the product introduction and Windows beta download.
+Built by [Rahul Meena](https://github.com/rahulmeena). [navya.ai](https://navya.ai) hosts the product introduction and Windows beta download.
 
 Licensed under **GNU GPL v3.0**. See [LICENSE](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md); upstream components retain their own copyright and license notices.
