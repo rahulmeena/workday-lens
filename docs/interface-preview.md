@@ -1,6 +1,6 @@
 # Interface previews
 
-The README uses the space-themed Navya banner, dashboard and hierarchical activity timeline published on [navya.ai](https://navya.ai). The interface images are website design previews, not a claim that every depicted view or feature is available in both desktop versions.
+The README uses the dashboard and hierarchical activity timeline published on [navya.ai](https://navya.ai). The interface images are website design previews, not a claim that every depicted view or feature is available in both desktop versions. The previously used space banner is retained among the source assets below.
 
 | Preview | Published asset | Repository copy |
 | --- | --- | --- |

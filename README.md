@@ -1,6 +1,6 @@
-![Navya AI — a private memory of your workday](docs/images/navya-banner.webp)
+<p align="center"><img src="frontend/public/workday-lens-icons/workday-lens-logo.svg" width="88" alt="Workday Lens" /></p>
 
-# Workday Lens
+# Workday Lens · [navya.ai](https://navya.ai)
 
 **A private memory of your workday.**
 
@@ -10,7 +10,7 @@ That history becomes a lasting, structured memory on your machine, from short ac
 
 [Windows beta download](https://navya.ai/download) · [Try the demo](#try-it-with-synthetic-data) · [Model support](#model-support) · [Evaluation](docs/evaluation.md) · [Architecture](docs/architecture.md)
 
-*Interface previews from [navya.ai](https://navya.ai). These illustrate the product design; available features and appearance vary by platform/version. [Running-app screenshots](docs/interface-preview.md) show the current source demo.*
+## Product preview
 
 ### Daily dashboard
 
