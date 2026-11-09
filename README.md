@@ -30,9 +30,9 @@ Development included **46 model/runtime/modality/prompt configurations across 25
 
 The evaluation workflow combines GPT-5.4/GPT-5.5/GPT-5.4-mini judges, reference agreement, source-grounded faithfulness/coverage/precision, schema validity, latency and token-use tracking. Four retained 50-card prompt sweeps show how prompt changes were compared, including regressions.
 
-![Open-weight and proprietary model results in the same recorded text-only reference-judge run](docs/images/evaluation-model-comparison.svg)
+![Faithfulness and coverage for all 16 source-grounded configurations, sorted by overall score from highest to lowest](docs/images/evaluation-source-grounded.svg)
 
-**Highest recorded mean scores in this comparison:** Qwen3.6-27B Q4_K_M leads the open-weight group at **55.45/100** (588 judgments); GPT-5.4 leads the proprietary group at **78.38/100** (589). This is run R05, text-only, with GPT-5.4-mini judging reference agreement. Sample sets differ; these are historical observations, not universal “best model” claims. The separate source-grounded rubric measures support in captured evidence.
+All **16 configurations** from the source-grounded evaluation appear together, sorted by recorded mean overall score from highest to lowest. The bars show faithfulness and coverage, with sample counts beside each row.
 
 **[Open-weight vs. proprietary results →](docs/evaluation-comparison.md)** · [Evaluation methods](docs/evaluation.md) · [All model results](docs/evaluation-models.md) · [Judge scores](docs/evaluation-judges.md) · [Prompt experiments](docs/evaluation-prompts.md) · [Data and code](evaluations/README.md)
 
